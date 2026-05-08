@@ -1,21 +1,45 @@
 {
-    "projects":[],
-    "categories":[
-        {
-            "id":1,
-            "name":"infra"
-        },
-         {
-            "id":2,
-            "name":"Desenvolvimento"
-        },
-         {
-            "id":3,
-            "name":"Devops"
-        },
-         {
-            "id":4,
-            "name":"full-stack"
-        }
-    ]
+  "projects": [
+    {
+      "name": "fodademais",
+      "budget": "2000",
+      "categories": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "3rmWNS7hW3I"
+    },
+    {
+      "name": "fodademairs",
+      "budget": "2000",
+      "categories": {
+        "id": "3",
+        "name": "Devops"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "HBBhzgKh4qE"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "infra"
+    },
+    {
+      "id": "2",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "3",
+      "name": "Devops"
+    },
+    {
+      "id": "4",
+      "name": "full-stack"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
