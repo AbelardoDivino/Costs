@@ -19,9 +19,8 @@ fetch("http://localhost:5000/projects",{
 ).then(
     (data) => {
         console.log(data)
-        navigate('/')
-    }
-).catch(err => console.log("erro"))
+        navigate('/projects', {state: {message: 'Projeto criado com sucesso'}})
+    }).catch(err => console.log("erro"))
 
 
   }
