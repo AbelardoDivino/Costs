@@ -54,6 +54,28 @@
       "cost": 0,
       "services": [],
       "id": "XTrXAobRINo"
+    },
+    {
+      "name": "Abelardo Divino",
+      "budget": "2000",
+      "categories": {
+        "id": "3",
+        "name": "Devops"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "i80xpep8uFY"
+    },
+    {
+      "name": "testar o get",
+      "budget": "3000",
+      "categories": {
+        "id": "4",
+        "name": "full-stack"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "sgYuSI5ccsU"
     }
   ],
   "categories": [
