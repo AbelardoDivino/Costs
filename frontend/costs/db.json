@@ -1,5 +1,28 @@
 {
-  "projects": [],
+  "projects": [
+    {
+      "name": "teste",
+      "cost": 0,
+      "services": [],
+      "id": "3I3ngCe4t-w",
+      "budget": "2000",
+      "categories": {
+        "id": "1",
+        "name": "infra"
+      }
+    },
+    {
+      "name": "teste",
+      "budget": "2000",
+      "categories": {
+        "id": "3",
+        "name": "Devops"
+      },
+      "cost": 0,
+      "services": [],
+      "id": "cm0RnntDNBo"
+    }
+  ],
   "categories": [
     {
       "id": "1",

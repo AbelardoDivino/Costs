@@ -9,6 +9,16 @@ function Projectform({handleSubmit,btntext,projectData}){
   
 const [categories,setcategories] = useState([])
 const [project,setproject] = useState(projectData || {})
+const [budgetError, setBudgetError] = useState('')
+
+useEffect(() => {
+  if (projectData) {
+    setproject(projectData)
+    if (projectData.budget !== '' && Number(projectData.budget) < 0) {
+      setBudgetError('O orçamento não pode ser menor que zero')
+    }
+  }
+}, [projectData])
 
 useEffect(()=>{
   
@@ -26,15 +36,27 @@ fetch("http://localhost:5000/categories",{
 .catch(err => console.log("erro"))
 
 },[])
-const submit =  (e)=>{
-e.preventDefault()
-handleSubmit(project)
-console.log(project)
+const submit = (e) => {
+  e.preventDefault()
+  if (project.budget !== '' && Number(project.budget) < 0) {
+    setBudgetError('O orçamento não pode ser menor que zero')
+    return
+  }
+  setBudgetError('')
+  handleSubmit(project)
 }
 
 function handlechange(e){
-  setproject({...project, [e.target.name]: e.target.value})
-  console.log(project)
+  const { name, value } = e.target
+  setproject({ ...project, [name]: value })
+
+  if (name === 'budget') {
+    if (value !== '' && Number(value) < 0) {
+      setBudgetError('O orçamento não pode ser menor que zero')
+    } else {
+      setBudgetError('')
+    }
+  }
 }
 
 function handlecategory(e){
@@ -53,11 +75,14 @@ function handlecategory(e){
            text='Orçamento do Projeto'
            name='budget'
            placeholder='Insira o orçamento total'
-           handleOnChange={handlechange} value={project.budget ? project.budget : ''}
+           handleOnChange={handlechange}
+           value={project.budget ?? ''}
+           min='0'
            />
+           {budgetError && <p className={styles.error}>{budgetError}</p>}
 
             <div>
-              <Select name="category_id" text="Selecione a categoria" options={categories} handleOnChange={handlecategory} value={project.category_id ? project.category_id : ''} />
+              <Select name="category_id" text="Selecione a categoria" options={categories} handleOnChange={handlecategory} value={project.categories?.id || project.category_id || ''} />
             </div>
 
            <Submit text={btntext} />

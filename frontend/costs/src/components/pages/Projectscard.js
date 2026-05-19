@@ -17,7 +17,9 @@ function Projectscard({id,name,budget,category,handleremove}){
             <span></span> {category}
            </p>
            <div className={styles.actions}>
-           <Link to=''> <p><BsPencil /> Editar</p></Link>
+
+           <Link to={`/project/${id}`}> 
+           <p><BsPencil /> Editar</p></Link>
            
            <Link to=''>
   <p onClick={remove}>
